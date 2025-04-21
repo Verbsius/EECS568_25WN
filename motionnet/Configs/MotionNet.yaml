@@ -1,0 +1,27 @@
+seed : 42
+
+T: 9
+past_frames: 1
+binary_counts: True
+transform_pose: True
+voxelize_input: True
+remove_zero: True
+
+debug: False
+
+model_name: MotionNet
+data_name: kitti
+
+num_workers: 32
+epoch_num: 50
+B: 16 # batch size 16 for V100， 32 for A100
+
+lr: 0.0032
+BETA1: 0.9
+BETA2: 0.999
+DECAY: 0.96
+
+use_amp: true # A100、A40、V100、3090、4090 
+print_every: 10
+
+model_path: "/scratch/eecs568s001w25_class_root/eecs568s001w25_class/yiweigui/bev-global-mapping/motionnet/Models/Weights/MotionNet/Epoch5.pt"
